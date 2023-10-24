@@ -4,8 +4,10 @@
 }
 .filters li {
   display: inline-block;
-  max-width: 80px;
+  max-width: 100px;
   padding: 3px;
+  margin-top: 10px;
+  margin-left:20px;
 }
 .filters li label {
   display: block;

@@ -1,90 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link rel="shortcut icon" href="./assets/img/4geeks.ico" />
-    <script
-      src="https://kit.fontawesome.com/072e5df971.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Rigo with Vanilla.js</title>
+  <link rel="shortcut icon" href="./assets/img/4geeks.ico" />
+  <link rel="shortcut icon" href="./assets/img/4geeks.ico" />
+  <link rel="stylesheet" type="text/css" href="style/index.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <body>
-    <ul class="filters">
-      <li>
-        <label>Include Cover</label>
-        <select class="picker" for="includeCover">
-          <option value="">Include Cover</option>
-          <option value="true">True</option>
-          <option value="false">False</option>
-        </select>
-      </li>
-      <li>
-        <label>Name</label>
-        <input class="picker" for="name" type="text" />
-      </li>
-      <li>
-        <label>Last Name</label>
-        <input class="picker" for="lastName" type="text" />
-      </li>
-      <li>
-        <label>S.M. Position</label>
-        <select class="picker" for="socialMediaPosition">
-          <option value="position-left">Left</option>
-          <option value="position-right">Right</option>
-        </select>
-      </li>
-      <li>
-        <label>Twitter</label>
-        <input class="picker" for="twitter" type="text" />
-      </li>
-      <li>
-        <label>Github</label>
-        <input class="picker" for="github" type="text" />
-      </li>
-      <li>
-        <label>LinkedIn</label>
-        <input class="picker" for="linkedin" type="text" />
-      </li>
-      <li>
-        <label>Instagram</label>
-        <input class="picker" for="instagram" type="text" />
-      </li>
-      <li>
-        <label>Role</label>
-        <select class="picker" for="role">
-          <option value="">null</option>
-          <option value="Web Developer">Web Developer</option>
-          <option value="Floor Planner">Floor Planner</option>
-          <option value="Technical Writter">Technical Writter</option>
-        </select>
-      </li>
-      <li>
-        <label>City</label>
-        <select class="picker" for="city">
-          <option value="">null</option>
-          <option value="Miami">Miami</option>
-          <option value="Munich">Munich</option>
-          <option value="Caracas">Caracas</option>
-          <option value="Toronto">Toronto</option>
-        </select>
-      </li>
-      <li>
-        <label>Country</label>
-        <select class="picker" for="country">
-          <option value="">null</option>
-          <option value="USA">USA</option>
-          <option value="Germany">Germany</option>
-          <option value="Canada">Canada</option>
-          <option value="Venezuela">Venezuela</option>
-        </select>
-      </li>
-    </ul>
-    <div id="widget_content"></div>
+  <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
 
-    <!-- do not remove this bundle.js tag -->
-    <script type="text/javascript" src="/main.bundle.js"></script>
-  </body>
+  <!-- Incluye el script de Bootstrap aquí -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <ul class="filters">
+    <li>
+      <label>Include Cover</label>
+      <select class="picker" for="includeCover">
+        <option value=""><strong>Include Cover</strong></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </li>
+    <li>
+      <label><strong>Name</strong></label>
+      <input class="picker" for="name" type="text" />
+    </li>
+    <li>
+      <label><strong>Last Name</strong></label>
+      <input class="picker" for="lastName" type="text" />
+    </li>
+    <li>
+      <label><strong>S.M. Position</strong></label>
+      <select class="picker" for="socialMediaPosition">
+        <option value="position-left">Left</option>
+        <option value="position-right">Right</option>
+      </select>
+    </li>
+    <li>
+      <label><strong>Twitter</strong></label>
+      <input class="picker" for="twitter" type="text" />
+    </li>
+    <li>
+      <label><strong>Github</strong></label>
+      <input class="picker" for="github" type="text" />
+    </li>
+    <li>
+      <label><strong>LinkedIn</strong></label>
+      <input class="picker" for="linkedin" type="text" />
+    </li>
+    <li>
+      <label><strong>Instagram</strong></label>
+      <input class="picker" for="instagram" type="text" />
+    </li>
+    <li>
+      <label><strong>Role</strong></label>
+      <select class="picker" for="role">
+        <option value="">null</option>
+        <option value="Web Developer">Web Developer</option>
+        <option value="Floor Planner">Floor Planner</option>
+        <option value="Technical Writter">Technical Writter</option>
+      </select>
+    </li>
+    <li>
+      <label><strong>City</strong></label>
+      <select class="picker" for="city">
+        <option value="">null</option>
+        <option value="Miami">Miami</option>
+        <option value="Munich">Munich</option>
+        <option value="Caracas">Caracas</option>
+        <option value="Toronto">Toronto</option>
+      </select>
+    </li>
+    <li>
+      <label><strong>Country</strong></label>
+      <select class="picker" for="country">
+        <option value="">null</option>
+        <option value="USA">USA</option>
+        <option value="Germany">Germany</option>
+        <option value="Canada">Canada</option>
+        <option value="Venezuela">Venezuela</option>
+      </select>
+    </li>
+  </ul>
+  <div id="widget_content"></div>
+
+  <!-- do not remove this bundle.js tag -->
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+
 </html>

@@ -1,5 +1,3 @@
-import "../style/index.css";
-
 /**
  *  EDIT ONLY INSIDE THIS RENDER FUNCTION
  *  This function is called every time the user changes types or changes any input
@@ -30,33 +28,37 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
   // reset the website body with the new html output
-  document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-    `;
+  let profileHTML = `
+    <div class="widget">
+      ${cover}
+      <img src="${variables.avatarURL}" class="photo" />
+      <h1>${variables.name || "Nombre Indefinido"} ${variables.lastName || "Apellido Indefinido"}</h1>
+      <h2>${variables.role || "Rol Indefinido"}</h2>
+      <h3>${variables.city || "Ciudad Indefinida"}, ${variables.country || "País Indefinido"}</h3>
+      <ul class="${variables.socialMediaPosition || "position-right"}">
+        ${variables.twitter ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>` : ''}
+        ${variables.github ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>` : ''}
+        ${variables.linkedin ? `<li><a href="https://linkedin.com/in/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>` : ''}
+        ${variables.instagram ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>` : ''}
+      </ul>
+    </div>
+  `;
+
+  // Actualiza el contenido del elemento con id "widget_content" con el nuevo HTML
+  document.querySelector("#widget_content").innerHTML = profileHTML;
 }
 
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
  */
-window.onload = function() {
+window.onload = function () {
   window.variables = {
     // if includeCover is true the algorithm should show the cover image
     includeCover: true,
     // this is the image's url that will be used as a background for the profile cover
     background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL: "https://images.hola.com/imagenes/mascotas/20210217184541/gatos-gestos-lenguaje-significado/0-922-380/gatos-gestos-m.jpg?tx=w_680",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
@@ -72,8 +74,8 @@ window.onload = function() {
   };
   render(window.variables); // render the card for the first time
 
-  document.querySelectorAll(".picker").forEach(function(elm) {
-    elm.addEventListener("change", function(e) {
+  document.querySelectorAll(".picker").forEach(function (elm) {
+    elm.addEventListener("change", function (e) {
       // <- add a listener to every input
       const attribute = e.target.getAttribute("for"); // when any input changes, collect the value
       let values = {};
@@ -81,10 +83,10 @@ window.onload = function() {
         this.value == "" || this.value == "null"
           ? null
           : this.value == "true"
-          ? true
-          : this.value == "false"
-          ? false
-          : this.value;
+            ? true
+            : this.value == "false"
+              ? false
+              : this.value;
       render(Object.assign(window.variables, values)); // render again the card with new values
     });
   });
