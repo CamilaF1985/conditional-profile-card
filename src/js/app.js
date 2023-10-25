@@ -44,7 +44,7 @@ function render(variables = {}) {
     </div>
   `;
 
-  // Actualiza el contenido del elemento con id "widget_content" con el nuevo HTML
+  // Update "widget_content" with new html
   document.querySelector("#widget_content").innerHTML = profileHTML;
 }
 
